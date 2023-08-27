@@ -1,0 +1,19 @@
+# Virtual environment
+venv/
+
+# Compiled Python files
+*.pyc
+
+# Compiled Python bytecode
+__pycache__/
+
+# Other temporary files
+*.DS_Store
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+.ipynb_checkpoints/
+
+.env

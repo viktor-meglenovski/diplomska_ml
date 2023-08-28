@@ -47,17 +47,17 @@ def load_products(all_products, base_url, category, price_lower_bound_threshold=
 
 def scrape_data():
     all_products=list()
-    load_products(all_products, 'https://www.neptun.mk/prenosni_kompjuteri.nspx?items=100&page=', 'Laptop')
-    load_products(all_products, 'https://www.neptun.mk/mobilni_telefoni.nspx?items=100&page=', 'Phone', price_lower_bound_threshold=3000)
+    load_products(all_products, 'https://www.neptun.mk/prenosni_kompjuteri.nspx?items=100&page=', 'LAPTOP')
+    load_products(all_products, 'https://www.neptun.mk/mobilni_telefoni.nspx?items=100&page=', 'PHONE', price_lower_bound_threshold=3000)
     load_products(all_products, 'https://www.neptun.mk/televizori.nspx?items=100&page=', 'TV')
     load_products(all_products, 'https://www.neptun.mk/Procesori.nspx?items=100&page=', 'CPU')
-    load_products(all_products, 'https://www.neptun.mk/INVERTER_SISTEMI.nspx?items=100&page=', 'Air Conditioner')
-    load_products(all_products, 'https://www.neptun.mk/SPLIT_SISTEMI.nspx?items=100&page=', 'Air Conditioner')
-    load_products(all_products, 'https://www.neptun.mk/FRIZIDERI1.nspx?items=100&page=', 'Fridge')
-    load_products(all_products, 'https://www.neptun.mk/KOMBINIRANI_FRIZIDERI.nspx?items=100&page=', 'Fridge')
-    load_products(all_products, 'https://www.neptun.mk/SIDE_BY_SIDE_FRIZIDERI.nspx?items=100&page=', 'Fridge')
-    load_products(all_products, 'https://www.neptun.mk/HORIZONTALNI.nspx?items=100&page=', 'Freezers')
-    load_products(all_products, 'https://www.neptun.mk/VERTIKALNI.nspx?items=100&page=', 'Freezers')
+    load_products(all_products, 'https://www.neptun.mk/INVERTER_SISTEMI.nspx?items=100&page=', 'AC')
+    load_products(all_products, 'https://www.neptun.mk/SPLIT_SISTEMI.nspx?items=100&page=', 'AC')
+    load_products(all_products, 'https://www.neptun.mk/FRIZIDERI1.nspx?items=100&page=', 'FRIDGE')
+    load_products(all_products, 'https://www.neptun.mk/KOMBINIRANI_FRIZIDERI.nspx?items=100&page=', 'FRIDGE')
+    load_products(all_products, 'https://www.neptun.mk/SIDE_BY_SIDE_FRIZIDERI.nspx?items=100&page=', 'FRIDGE')
+    load_products(all_products, 'https://www.neptun.mk/HORIZONTALNI.nspx?items=100&page=', 'FREEZER')
+    load_products(all_products, 'https://www.neptun.mk/VERTIKALNI.nspx?items=100&page=', 'FREEZER')
     # NO GPUs AVAILABLE ON NEPTUN
 
     df=pd.DataFrame.from_dict(all_products)

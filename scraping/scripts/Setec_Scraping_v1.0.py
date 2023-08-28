@@ -36,14 +36,14 @@ def load_products(all_products, base_url, category, price_lower_bound_threshold=
 
 def scrape_data():
     all_products=list()
-    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10002_10003&limit=100&page=', 'Laptop')
-    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10066_10067&limit=100&page=', 'Phone', price_lower_bound_threshold=3000)
+    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10002_10003&limit=100&page=', 'LAPTOP')
+    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10066_10067&limit=100&page=', 'PHONE', price_lower_bound_threshold=3000)
     load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10054_10055&limit=100&page=', 'TV')
     load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10019_10020_10025&limit=100&page=', 'GPU', price_lower_bound_threshold=3000)
     load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10019_10020_10021&limit=100&page=', 'CPU')
-    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10169_10170&limit=100&page=', 'Air Conditioner')
-    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10090_10096&limit=100&page=', 'Fridge')
-    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10090_10101&limit=100&page=', 'Freezers')
+    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10169_10170&limit=100&page=', 'AC')
+    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10090_10096&limit=100&page=', 'FRIDGE')
+    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10090_10101&limit=100&page=', 'FREEZERS')
     df=pd.DataFrame.from_dict(all_products)
     df['store']='Setec'
     df['date']= date.today()

@@ -46,12 +46,12 @@ def load_products(all_products, base_url, category, price_lower_bound_threshold=
 
 def scrape_data():
     all_products=list()
-    load_products(all_products, 'https://tehnomarket.com.mk/category/4003/laptopi#page/{i}/offset/64/', 'Laptop')
-    load_products(all_products, 'https://tehnomarket.com.mk/category/4109/mobilni-telefoni#page/{i}/offset/64/', 'Phone', price_lower_bound_threshold=3000)
+    load_products(all_products, 'https://tehnomarket.com.mk/category/4003/laptopi#page/{i}/offset/64/', 'LAPTOP')
+    load_products(all_products, 'https://tehnomarket.com.mk/category/4109/mobilni-telefoni#page/{i}/offset/64/', 'PHONE', price_lower_bound_threshold=3000)
     load_products(all_products, 'https://tehnomarket.com.mk/category/4335/televizori#page/{i}/offset/64/', 'TV', price_lower_bound_threshold=10000)
-    load_products(all_products, 'https://tehnomarket.com.mk/category/3791/klima-uredi#page/{i}/offset/64/', 'Air Conditioner', price_lower_bound_threshold=20000)
-    load_products(all_products, 'https://tehnomarket.com.mk/category/3886/ladilnici#page/{i}/offset/64/', 'Fridge')
-    load_products(all_products, 'https://tehnomarket.com.mk/category/3884/zamrznuvachi#page/{i}/offset/64/', 'Freezers')
+    load_products(all_products, 'https://tehnomarket.com.mk/category/3791/klima-uredi#page/{i}/offset/64/', 'AC', price_lower_bound_threshold=20000)
+    load_products(all_products, 'https://tehnomarket.com.mk/category/3886/ladilnici#page/{i}/offset/64/', 'FRIDGE')
+    load_products(all_products, 'https://tehnomarket.com.mk/category/3884/zamrznuvachi#page/{i}/offset/64/', 'FREEZERS')
     # NO GPU AND CPU AVAILABLE ON TEHNOMARKET
 
     df=pd.DataFrame.from_dict(all_products)

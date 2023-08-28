@@ -32,8 +32,8 @@ def load_products(all_products, base_url, category, price_lower_bound_threshold=
 
 def scrape_data():
     all_products=list()
-    load_products(all_products, 'https://ddstore.mk/computersandlaptops/notebooksandaccessories/notebooks.html?p={i}&product_list_limit=48', 'Laptop')
-    load_products(all_products, 'https://ddstore.mk/computersandlaptops/SmartphonesandAccessories/smartphones.html?p={i}&product_list_limit=48', 'Phone', price_lower_bound_threshold=3000)
+    load_products(all_products, 'https://ddstore.mk/computersandlaptops/notebooksandaccessories/notebooks.html?p={i}&product_list_limit=48', 'LAPTOP')
+    load_products(all_products, 'https://ddstore.mk/computersandlaptops/SmartphonesandAccessories/smartphones.html?p={i}&product_list_limit=48', 'PHONE', price_lower_bound_threshold=3000)
     load_products(all_products, 'https://ddstore.mk/MonitorsTVandProjectors/TelevisionsandEquipment/televisions.html?p={i}&product_list_limit=48', 'TV')
     load_products(all_products, 'https://ddstore.mk/computercomponents/graphiccards.html?p={i}&product_list_limit=48', 'GPU', price_lower_bound_threshold=2000)
     load_products(all_products, 'https://ddstore.mk/computercomponents/processors.html?p={i}&product_list_limit=48', 'CPU')

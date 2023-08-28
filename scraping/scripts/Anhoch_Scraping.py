@@ -38,13 +38,13 @@ def load_products(all_products, base_url, category, price_lower_bound_threshold=
 
 def scrape_data():
     all_products=list()
-    load_products(all_products, "https://www.anhoch.com/category/3003/prenosni-kompjuteri-laptopi#page/{i}/offset/64/",'Laptop')
-    load_products(all_products, "https://www.anhoch.com/category/3017/smartfoni-i-mobilni-tel#page/{i}/offset/64/",'Phone', price_lower_bound_threshold=3000)
+    load_products(all_products, "https://www.anhoch.com/category/3003/prenosni-kompjuteri-laptopi#page/{i}/offset/64/",'LAPTOP')
+    load_products(all_products, "https://www.anhoch.com/category/3017/smartfoni-i-mobilni-tel#page/{i}/offset/64/",'PHONE', price_lower_bound_threshold=3000)
     load_products(all_products, 'https://www.anhoch.com/category/1013/televizori#page/{i}/offset/64/', 'TV')
     load_products(all_products, "https://www.anhoch.com/category/374/grafichki-kartichki#page/{i}/offset/64/",'GPU', price_lower_bound_threshold=3000)
     load_products(all_products, "https://www.anhoch.com/category/3004/intel-procesori#page/{i}/offset/64/",'CPU')
     load_products(all_products, "https://www.anhoch.com/category/3005/amd-procesori#page/{i}/offset/64/",'CPU')
-    load_products(all_products, "https://www.anhoch.com/category/1030/klima-uredi#page/{i}/offset/64/",'Air Conditioner')
+    load_products(all_products, "https://www.anhoch.com/category/1030/klima-uredi#page/{i}/offset/64/",'AC')
     # NO FRIDGES AND FREEZERS AVAILABLE ON ANHOCH
 
     df=pd.DataFrame.from_dict(all_products)

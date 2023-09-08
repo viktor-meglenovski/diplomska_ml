@@ -43,20 +43,29 @@ class Product(Base):
     link = Column(String)
     image = Column(String)
     product_cluster_id = Column(BigInteger, ForeignKey('product_cluster.id'))
+    current_price_id = Column(BigInteger, ForeignKey('current_price.id'))
 
     product_cluster = relationship("ProductCluster", back_populates="products")
-    prices = relationship("Price")
+    past_prices = relationship("PastPrice")
+    current_price = relationship("CurrentPrice")
     predictions = relationship("Prediction")
 
 
-class Price(Base):
-    __tablename__ = "price"
+class CurrentPrice(Base):
+    __tablename__ = "current_price"
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    price = Column(BigInteger)
+    date = Column(Date)
+
+
+class PastPrice(Base):
+    __tablename__ = "past_price"
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     price = Column(BigInteger)
     date = Column(Date)
     product_id = Column(BigInteger, ForeignKey('product.id'))
 
-    product = relationship("Product", back_populates="prices")
+    product = relationship("Product", back_populates="past_prices")
 
 
 class Prediction(Base):

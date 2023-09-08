@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>8700</IntrospectionStateNumber>
+      <IntrospectionStateNumber>61326</IntrospectionStateNumber>
       <ServerVersion>14.5</ServerVersion>
       <StartupTime>1693175110</StartupTime>
       <TimeZones>true ACDT
@@ -229,7 +229,7 @@ false America/Rio_Branco
 false America/Rosario
 true America/Santa_Isabel
 false America/Santarem
-false America/Santiago
+true America/Santiago
 false America/Santo_Domingo
 false America/Sao_Paulo
 true America/Scoresbysund
@@ -427,7 +427,7 @@ false CHAST
 false CHUT
 false CKT
 true CLST
-false CLT
+true CLT
 false COT
 false CST
 true CST6CDT
@@ -440,13 +440,13 @@ true Canada/Newfoundland
 true Canada/Pacific
 false Canada/Saskatchewan
 false Canada/Yukon
-false Chile/Continental
-false Chile/EasterIsland
+true Chile/Continental
+true Chile/EasterIsland
 true Cuba
 false DAVT
 false DDUT
-false EASST
-false EAST
+true EASST
+true EAST
 false EAT
 true EDT
 true EEST
@@ -682,7 +682,7 @@ false Pacific/Auckland
 false Pacific/Bougainville
 false Pacific/Chatham
 false Pacific/Chuuk
-false Pacific/Easter
+true Pacific/Easter
 false Pacific/Efate
 false Pacific/Enderbury
 false Pacific/Fakaofo
@@ -800,7 +800,7 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>8700</IntrospectionStateNumber>
+      <IntrospectionStateNumber>61326</IntrospectionStateNumber>
       <ObjectId>17544</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4230,376 +4230,452 @@ false Zulu
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>8700</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-08-28.00:51:13.386</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-08-27.22:51:14</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>61326</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2023-09-03.12:33:31.032</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-09-03.10:33:31</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
     <sequence id="263" parent="262" name="app_user_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18248</ObjectId>
-      <SequenceIdentity>1(1)</SequenceIdentity>
+      <ObjectId>22072</ObjectId>
+      <SequenceIdentity>1(2)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>8692</StateNumber>
+      <StateNumber>26248</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="264" parent="262" name="prediction_id_seq">
+    <sequence id="264" parent="262" name="current_price_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18257</ObjectId>
+      <ObjectId>29455</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>8693</StateNumber>
+      <StateNumber>61311</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="265" parent="262" name="price_id_seq">
+    <sequence id="265" parent="262" name="past_price_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18265</ObjectId>
+      <ObjectId>29462</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>8694</StateNumber>
+      <StateNumber>61312</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="266" parent="262" name="product_cluster_id_seq">
+    <sequence id="266" parent="262" name="prediction_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18282</ObjectId>
+      <ObjectId>29469</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>8696</StateNumber>
+      <StateNumber>61313</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="267" parent="262" name="product_id_seq">
+    <sequence id="267" parent="262" name="product_cluster_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18272</ObjectId>
+      <ObjectId>29487</ObjectId>
       <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>8695</StateNumber>
+      <StateNumber>61315</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <table id="268" parent="262" name="app_user">
-      <ObjectId>18249</ObjectId>
-      <StateNumber>8692</StateNumber>
+    <sequence id="268" parent="262" name="product_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>29477</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>61314</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="269" parent="262" name="app_user">
+      <ObjectId>22073</ObjectId>
+      <StateNumber>26248</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="269" parent="262" name="prediction">
-      <ObjectId>18258</ObjectId>
-      <StateNumber>8697</StateNumber>
+    <table id="270" parent="262" name="current_price">
+      <ObjectId>29456</ObjectId>
+      <StateNumber>61320</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="270" parent="262" name="price">
-      <ObjectId>18266</ObjectId>
-      <StateNumber>8698</StateNumber>
+    <table id="271" parent="262" name="past_price">
+      <ObjectId>29463</ObjectId>
+      <StateNumber>61318</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="271" parent="262" name="product">
-      <ObjectId>18273</ObjectId>
-      <StateNumber>8697</StateNumber>
+    <table id="272" parent="262" name="prediction">
+      <ObjectId>29470</ObjectId>
+      <StateNumber>61319</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="272" parent="262" name="product_cluster">
-      <ObjectId>18283</ObjectId>
-      <StateNumber>8699</StateNumber>
+    <table id="273" parent="262" name="product">
+      <ObjectId>29478</ObjectId>
+      <StateNumber>61318</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="273" parent="268" name="id">
+    <table id="274" parent="262" name="product_cluster">
+      <ObjectId>29488</ObjectId>
+      <StateNumber>61321</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="275" parent="269" name="id">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;app_user_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>8692</StateNumber>
-      <SequenceId>18248</SequenceId>
+      <StateNumber>26248</StateNumber>
+      <SequenceId>22072</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="274" parent="268" name="first_name">
+    <column id="276" parent="269" name="first_name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>8692</StateNumber>
+      <StateNumber>26248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="275" parent="268" name="last_name">
+    <column id="277" parent="269" name="last_name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>8692</StateNumber>
+      <StateNumber>26248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="276" parent="268" name="login">
+    <column id="278" parent="269" name="login">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>8692</StateNumber>
+      <StateNumber>26248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="277" parent="268" name="password">
+    <column id="279" parent="269" name="password">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>8692</StateNumber>
+      <StateNumber>26248</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="278" parent="268" name="app_user_pkey">
+    <index id="280" parent="269" name="app_user_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18255</ObjectId>
+      <ObjectId>22079</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>8692</StateNumber>
+      <StateNumber>26248</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="279" parent="268" name="app_user_pkey">
+    <key id="281" parent="269" name="app_user_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18256</ObjectId>
+      <ObjectId>22080</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>8692</StateNumber>
-      <UnderlyingIndexId>18255</UnderlyingIndexId>
+      <StateNumber>26248</StateNumber>
+      <UnderlyingIndexId>22079</UnderlyingIndexId>
     </key>
-    <check id="280" parent="269" name="prediction_prediction_result_check">
-      <ColNames>prediction_result</ColNames>
-      <ObjectId>18262</ObjectId>
-      <Predicate>(prediction_result)::text = ANY ((ARRAY[&apos;DOWN&apos;::character varying, &apos;NO_CHANGE&apos;::character varying, &apos;UP&apos;::character varying])::text[])</Predicate>
-      <StateNumber>8693</StateNumber>
-    </check>
-    <column id="281" parent="269" name="predicted_on">
-      <DasType>date|0s</DasType>
+    <column id="282" parent="270" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;current_price_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>8693</StateNumber>
+      <StateNumber>61311</StateNumber>
+      <SequenceId>29455</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="283" parent="270" name="date">
+      <DasType>date|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>61311</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="282" parent="269" name="prediction_accuracy">
-      <DasType>boolean|0s</DasType>
-      <Position>2</Position>
-      <StateNumber>8693</StateNumber>
-      <TypeId>16</TypeId>
+    <column id="284" parent="270" name="price">
+      <DasType>bigint|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>61311</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="283" parent="269" name="id">
+    <index id="285" parent="270" name="current_price_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>29460</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>61311</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="286" parent="270" name="current_price_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>29461</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>61311</StateNumber>
+      <UnderlyingIndexId>29460</UnderlyingIndexId>
+    </key>
+    <column id="287" parent="271" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;past_price_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>61312</StateNumber>
+      <SequenceId>29462</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="288" parent="271" name="date">
+      <DasType>date|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>61312</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="289" parent="271" name="price">
+      <DasType>bigint|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>61312</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="290" parent="271" name="product_id">
+      <DasType>bigint|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>61312</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="291" parent="271" name="fkeq8rhuvvythhy6uxufjhn3oiw">
+      <ColNames>product_id</ColNames>
+      <ObjectId>29497</ObjectId>
+      <StateNumber>61318</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>29478</RefTableId>
+    </foreign-key>
+    <index id="292" parent="271" name="past_price_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>29467</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>61312</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="293" parent="271" name="past_price_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>29468</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>61312</StateNumber>
+      <UnderlyingIndexId>29467</UnderlyingIndexId>
+    </key>
+    <check id="294" parent="272" name="prediction_prediction_result_check">
+      <ColNames>prediction_result</ColNames>
+      <ObjectId>29474</ObjectId>
+      <Predicate>(prediction_result)::text = ANY ((ARRAY[&apos;DOWN&apos;::character varying, &apos;NO_CHANGE&apos;::character varying, &apos;UP&apos;::character varying])::text[])</Predicate>
+      <StateNumber>61313</StateNumber>
+    </check>
+    <column id="295" parent="272" name="id">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;prediction_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>8693</StateNumber>
-      <SequenceId>18257</SequenceId>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="284" parent="269" name="next_predicted_price">
-      <DasType>bigint|0s</DasType>
-      <Position>4</Position>
-      <StateNumber>8693</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="285" parent="269" name="previous_price">
-      <DasType>bigint|0s</DasType>
-      <Position>5</Position>
-      <StateNumber>8693</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="286" parent="269" name="product_id">
-      <DasType>bigint|0s</DasType>
-      <Position>6</Position>
-      <StateNumber>8693</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="287" parent="269" name="prediction_result">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>7</Position>
-      <StateNumber>8693</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <foreign-key id="288" parent="269" name="fkbbxwvxe9wldql3p5tuhyv8va6">
-      <ColNames>product_id</ColNames>
-      <ObjectId>18290</ObjectId>
-      <StateNumber>8697</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>18273</RefTableId>
-    </foreign-key>
-    <index id="289" parent="269" name="prediction_pkey">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18263</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>8693</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="290" parent="269" name="prediction_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18264</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>8693</StateNumber>
-      <UnderlyingIndexId>18263</UnderlyingIndexId>
-    </key>
-    <column id="291" parent="270" name="date">
-      <DasType>date|0s</DasType>
       <Position>1</Position>
-      <StateNumber>8694</StateNumber>
+      <StateNumber>61313</StateNumber>
+      <SequenceId>29469</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="296" parent="272" name="next_predicted_price">
+      <DasType>bigint|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>61313</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="297" parent="272" name="predicted_on">
+      <DasType>date|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>61313</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="292" parent="270" name="id">
-      <DasType>bigint|0s</DasType>
-      <DefaultExpression>nextval(&apos;price_id_seq&apos;::regclass)</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>8694</StateNumber>
-      <SequenceId>18265</SequenceId>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="293" parent="270" name="price">
-      <DasType>bigint|0s</DasType>
-      <Position>3</Position>
-      <StateNumber>8694</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="294" parent="270" name="product_id">
-      <DasType>bigint|0s</DasType>
+    <column id="298" parent="272" name="prediction_accuracy">
+      <DasType>boolean|0s</DasType>
       <Position>4</Position>
-      <StateNumber>8694</StateNumber>
+      <StateNumber>61313</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="299" parent="272" name="prediction_result">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>61313</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="300" parent="272" name="previous_price">
+      <DasType>bigint|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>61313</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="295" parent="270" name="fkk4mbgqf5yru5ib5b6w5l6ukkj">
+    <column id="301" parent="272" name="product_id">
+      <DasType>bigint|0s</DasType>
+      <Position>7</Position>
+      <StateNumber>61313</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="302" parent="272" name="fkbbxwvxe9wldql3p5tuhyv8va6">
       <ColNames>product_id</ColNames>
-      <ObjectId>18295</ObjectId>
-      <StateNumber>8698</StateNumber>
+      <ObjectId>29502</ObjectId>
+      <StateNumber>61319</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>18273</RefTableId>
+      <RefTableId>29478</RefTableId>
     </foreign-key>
-    <index id="296" parent="270" name="price_pkey">
+    <index id="303" parent="272" name="prediction_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18270</ObjectId>
+      <ObjectId>29475</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>8694</StateNumber>
+      <StateNumber>61313</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="297" parent="270" name="price_pkey">
+    <key id="304" parent="272" name="prediction_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18271</ObjectId>
+      <ObjectId>29476</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>8694</StateNumber>
-      <UnderlyingIndexId>18270</UnderlyingIndexId>
+      <StateNumber>61313</StateNumber>
+      <UnderlyingIndexId>29475</UnderlyingIndexId>
     </key>
-    <check id="298" parent="271" name="product_store_check">
+    <check id="305" parent="273" name="product_store_check">
       <ColNames>store</ColNames>
-      <ObjectId>18277</ObjectId>
+      <ObjectId>29482</ObjectId>
       <Predicate>(store)::text = ANY ((ARRAY[&apos;Anhoch&apos;::character varying, &apos;DDStore&apos;::character varying, &apos;EKupi&apos;::character varying, &apos;Neptun&apos;::character varying, &apos;Setec&apos;::character varying, &apos;TehnoMarket&apos;::character varying])::text[])</Predicate>
-      <StateNumber>8695</StateNumber>
+      <StateNumber>61314</StateNumber>
     </check>
-    <column id="299" parent="271" name="id">
+    <column id="306" parent="273" name="id">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;product_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>8695</StateNumber>
-      <SequenceId>18272</SequenceId>
+      <StateNumber>61314</StateNumber>
+      <SequenceId>29477</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="300" parent="271" name="product_cluster_id">
-      <DasType>bigint|0s</DasType>
+    <column id="307" parent="273" name="image">
+      <DasType>varchar(1000)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>8695</StateNumber>
-      <TypeId>20</TypeId>
+      <StateNumber>61314</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="301" parent="271" name="image">
+    <column id="308" parent="273" name="link">
       <DasType>varchar(1000)|0s</DasType>
       <Position>3</Position>
-      <StateNumber>8695</StateNumber>
+      <StateNumber>61314</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="302" parent="271" name="link">
+    <column id="309" parent="273" name="name">
       <DasType>varchar(1000)|0s</DasType>
       <Position>4</Position>
-      <StateNumber>8695</StateNumber>
+      <StateNumber>61314</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="303" parent="271" name="name">
-      <DasType>varchar(1000)|0s</DasType>
+    <column id="310" parent="273" name="preprocessed_name">
+      <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
-      <StateNumber>8695</StateNumber>
+      <StateNumber>61314</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="304" parent="271" name="preprocessed_name">
+    <column id="311" parent="273" name="store">
       <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
-      <StateNumber>8695</StateNumber>
+      <StateNumber>61314</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="305" parent="271" name="store">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>7</Position>
-      <StateNumber>8695</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="306" parent="271" name="vectorized_name">
+    <column id="312" parent="273" name="vectorized_name">
       <DasType>jsonb|0s</DasType>
-      <Position>8</Position>
-      <StateNumber>8695</StateNumber>
+      <Position>7</Position>
+      <StateNumber>61314</StateNumber>
       <TypeId>3802</TypeId>
     </column>
-    <foreign-key id="307" parent="271" name="fkn97398t07xruyb732p7iab4ak">
-      <ColNames>product_cluster_id</ColNames>
-      <ObjectId>18300</ObjectId>
-      <StateNumber>8699</StateNumber>
+    <column id="313" parent="273" name="current_price_id">
+      <DasType>bigint|0s</DasType>
+      <Position>8</Position>
+      <StateNumber>61314</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="314" parent="273" name="product_cluster_id">
+      <DasType>bigint|0s</DasType>
+      <Position>9</Position>
+      <StateNumber>61314</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="315" parent="273" name="fkfasvfkowm4xb2oeybndukeyif">
+      <ColNames>current_price_id</ColNames>
+      <ObjectId>29507</ObjectId>
+      <StateNumber>61320</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>18283</RefTableId>
+      <RefTableId>29456</RefTableId>
     </foreign-key>
-    <index id="308" parent="271" name="product_pkey">
+    <foreign-key id="316" parent="273" name="fkn97398t07xruyb732p7iab4ak">
+      <ColNames>product_cluster_id</ColNames>
+      <ObjectId>29512</ObjectId>
+      <StateNumber>61321</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>29488</RefTableId>
+    </foreign-key>
+    <index id="317" parent="273" name="product_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18280</ObjectId>
+      <ObjectId>29485</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>8695</StateNumber>
+      <StateNumber>61314</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="309" parent="271" name="product_pkey">
+    <index id="318" parent="273" name="uk_k5awp7onp4l354a29ckv5xst7">
+      <ColNames>current_price_id</ColNames>
+      <ObjectId>29495</ObjectId>
+      <StateNumber>61317</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="319" parent="273" name="product_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18281</ObjectId>
+      <ObjectId>29486</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>8695</StateNumber>
-      <UnderlyingIndexId>18280</UnderlyingIndexId>
+      <StateNumber>61314</StateNumber>
+      <UnderlyingIndexId>29485</UnderlyingIndexId>
     </key>
-    <check id="310" parent="272" name="product_cluster_category_check">
+    <key id="320" parent="273" name="uk_k5awp7onp4l354a29ckv5xst7">
+      <ObjectId>29496</ObjectId>
+      <StateNumber>61317</StateNumber>
+      <UnderlyingIndexId>29495</UnderlyingIndexId>
+    </key>
+    <check id="321" parent="274" name="product_cluster_category_check">
       <ColNames>category</ColNames>
-      <ObjectId>18287</ObjectId>
+      <ObjectId>29492</ObjectId>
       <Predicate>(category)::text = ANY ((ARRAY[&apos;LAPTOP&apos;::character varying, &apos;PHONE&apos;::character varying, &apos;TV&apos;::character varying, &apos;CPU&apos;::character varying, &apos;GPU&apos;::character varying, &apos;AC&apos;::character varying, &apos;FRIDGE&apos;::character varying, &apos;FREEZER&apos;::character varying])::text[])</Predicate>
-      <StateNumber>8696</StateNumber>
+      <StateNumber>61315</StateNumber>
     </check>
-    <column id="311" parent="272" name="id">
+    <column id="322" parent="274" name="id">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;product_cluster_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>8696</StateNumber>
-      <SequenceId>18282</SequenceId>
+      <StateNumber>61315</StateNumber>
+      <SequenceId>29487</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="312" parent="272" name="category">
+    <column id="323" parent="274" name="category">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>8696</StateNumber>
+      <StateNumber>61315</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="313" parent="272" name="product_cluster_pkey">
+    <index id="324" parent="274" name="product_cluster_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18288</ObjectId>
+      <ObjectId>29493</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>8696</StateNumber>
+      <StateNumber>61315</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="314" parent="272" name="product_cluster_pkey">
+    <key id="325" parent="274" name="product_cluster_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18289</ObjectId>
+      <ObjectId>29494</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>8696</StateNumber>
-      <UnderlyingIndexId>18288</UnderlyingIndexId>
+      <StateNumber>61315</StateNumber>
+      <UnderlyingIndexId>29493</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

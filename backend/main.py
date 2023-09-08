@@ -8,7 +8,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    #populate_products()
+    populate_products()
     return {"message": "Hello World"}
 
 
@@ -18,5 +18,5 @@ async def say_hello(name: str):
 
 @app.get("/admin/scrape_data")
 async def scrape_data():
-    scrape_all()
+    # scrape_all()
     return {"message": "Scraping Complete"}

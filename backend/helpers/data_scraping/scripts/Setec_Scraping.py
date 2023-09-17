@@ -42,8 +42,8 @@ def scrape_data(folder_path):
     load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10019_10020_10021&limit=100&page=', 'CPU')
     load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10169_10170&limit=100&page=', 'AC')
     load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10090_10096&limit=100&page=', 'FRIDGE')
-    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10090_10101&limit=100&page=', 'FREEZERS')
+    load_products(all_products, 'https://setec.mk/index.php?route=product/category&path=10090_10101&limit=100&page=', 'FREEZE')
     df=pd.DataFrame.from_dict(all_products)
     df['store']='Setec'
     df['date']= date.today()
-    df.to_excel(f"{folder_path}\\setec_{date.today()}.xlsx", index=False)
+    df.to_csv(f"{folder_path}\\setec_{date.today()}.csv", index=False)

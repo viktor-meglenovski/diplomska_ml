@@ -8,7 +8,7 @@ def load_products(driver, all_products, base_url, category, price_lower_bound_th
     page=1
     while True:
         driver.get(base_url.replace('{i}',str(page)))
-        time.sleep(2)
+        time.sleep(3)
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         products = driver.find_elements(By.CSS_SELECTOR, "ul.products")
         if len(products)==0:
@@ -49,6 +49,6 @@ def scrape_data(folder_path):
     df=pd.DataFrame.from_dict(all_products)
     df['store']='Anhoch'
     df['date']= date.today()
-    df.to_excel(f"{folder_path}\\anhoch_{date.today()}.xlsx", index=False)
+    df.to_csv(f"{folder_path}\\anhoch_{date.today()}.csv", index=False)
     driver.quit()
 

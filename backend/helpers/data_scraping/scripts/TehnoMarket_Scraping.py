@@ -51,12 +51,12 @@ def scrape_data(folder_path):
     load_products(driver, all_products, 'https://tehnomarket.com.mk/category/4335/televizori#page/{i}/offset/64/', 'TV', price_lower_bound_threshold=10000)
     load_products(driver, all_products, 'https://tehnomarket.com.mk/category/3791/klima-uredi#page/{i}/offset/64/', 'AC', price_lower_bound_threshold=20000)
     load_products(driver, all_products, 'https://tehnomarket.com.mk/category/3886/ladilnici#page/{i}/offset/64/', 'FRIDGE')
-    load_products(driver, all_products, 'https://tehnomarket.com.mk/category/3884/zamrznuvachi#page/{i}/offset/64/', 'FREEZERS')
+    load_products(driver, all_products, 'https://tehnomarket.com.mk/category/3884/zamrznuvachi#page/{i}/offset/64/', 'FREEZER')
     # NO GPU AND CPU AVAILABLE ON TEHNOMARKET
 
     df=pd.DataFrame.from_dict(all_products)
     df['store']='TehnoMarket'
     df['date']= date.today()
     df=df[['name','category','store', 'link', 'image', 'regular_price', 'discount_price', 'date']]
-    df.to_excel(f"{folder_path}\\tehnomarket_{date.today()}.xlsx", index=False)
+    df.to_csv(f"{folder_path}\\tehnomarket_{date.today()}.csv", index=False)
     driver.quit()

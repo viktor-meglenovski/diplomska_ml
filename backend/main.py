@@ -1,22 +1,28 @@
+import uvicorn
 from fastapi import FastAPI
-
-from helpers.data_scraping.scripts.scrape_all import scrape_all
-from helpers.populate_database import populate_products
+from starlette.middleware.cors import CORSMiddleware
+from router.visualizations_router import router as visualizations_router
+from router.admin_router import router as admin_router
 
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    populate_products()
-    return {"message": "Hello World"}
+@app.get("/healthcheck", include_in_schema=False)
+async def healthcheck() -> dict[str, str]:
+    return {"status": "ok"}
 
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+app.include_router(visualizations_router, prefix="/visualize", tags=["Visualizations"])
+app.include_router(admin_router, prefix="/admin", tags=["Admin"])
 
-@app.get("/admin/scrape_data")
-async def scrape_data():
-    # scrape_all()
-    return {"message": "Scraping Complete"}
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host='0.0.0.0', port=8000, reload=True)
+

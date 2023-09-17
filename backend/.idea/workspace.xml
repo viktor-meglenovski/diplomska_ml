@@ -8,9 +8,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/a4400cb5-5dd4-4650-aa71-7507efe28b61.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a4400cb5-5dd4-4650-aa71-7507efe28b61.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/a4400cb5-5dd4-4650-aa71-7507efe28b61/storage_v2/_src_/database/diplomska.yo1raQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a4400cb5-5dd4-4650-aa71-7507efe28b61/storage_v2/_src_/database/diplomska.yo1raQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geckodriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/geckodriver.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/data/all_data_2023-07-30.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/data/all_data_2023-07-30.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/data/all_data_2023-08-15.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/data/all_data_2023-08-15.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/data/all_data_2023-08-24.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/data/all_data_2023-08-24.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/data/all_data_2023-08-28.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/data/all_data_2023-08-28.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/scripts/Anhoch_Scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/scripts/Anhoch_Scraping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/scripts/DDStore_Scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/scripts/DDStore_Scraping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/scripts/EKupi_Scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/scripts/EKupi_Scraping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/scripts/Neptun_Scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/scripts/Neptun_Scraping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/scripts/Setec_Scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/scripts/Setec_Scraping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/scripts/TehnoMarket_Scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/scripts/TehnoMarket_Scraping.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/data_scraping/scripts/scrape_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/data_scraping/scripts/scrape_all.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpers/populate_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/populate_database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/router/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/notebooks/Clustering.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../scraping/notebooks/Clustering.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scraping/scripts/EKupi_Scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/../scraping/scripts/EKupi_Scraping.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,26 +52,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Viktor/Desktop/ITLabsStockDolphin-DS/Backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Viktor/Desktop/diplomska_ml/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="backend" type="Python.FastAPI">
       <option name="file" value="$PROJECT_DIR$/main.py" />
@@ -90,6 +106,15 @@
       <workItem from="1693734781309" duration="3592000" />
       <workItem from="1693775914473" duration="595000" />
       <workItem from="1693814155535" duration="17000" />
+      <workItem from="1694250245626" duration="13533000" />
+      <workItem from="1694342136040" duration="941000" />
+      <workItem from="1694373793658" duration="3349000" />
+      <workItem from="1694434136990" duration="649000" />
+      <workItem from="1694709251246" duration="1545000" />
+      <workItem from="1694761849380" duration="23000" />
+      <workItem from="1694941987130" duration="398000" />
+      <workItem from="1694951112124" duration="11000" />
+      <workItem from="1694952743902" duration="18921000" />
     </task>
     <servers />
   </component>
@@ -97,7 +122,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1693737374618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backend$backend.coverage" NAME="backend Coverage Results" MODIFIED="1694968652648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backend$populate_database.coverage" NAME="populate_database Coverage Results" MODIFIED="1693144539646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
     <SUITE FILE_PATH="coverage/backend$main.coverage" NAME="main Coverage Results" MODIFIED="1693144710913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -15,7 +15,7 @@ def load_products(all_products, base_url, category, price_lower_bound_threshold=
       break
     for p in products:
       name_element=p.select('a.name')
-      image_element=p.select('.static-stickers > img')
+      image_element=p.select('.thumb > img')
       price_element=p.select('div.price')
       if(len(name_element)==0 or len(image_element)==0 or len(price_element)==0):
         continue
@@ -44,4 +44,4 @@ def scrape_data(folder_path):
     df=pd.DataFrame.from_dict(all_products)
     df['store']='EKupi'
     df['date']= date.today()
-    df.to_excel(f"{folder_path}\\ekupi_{date.today()}.xlsx", index=False)
+    df.to_csv(f"{folder_path}\\ekupi_{date.today()}.csv", index=False)

@@ -42,4 +42,4 @@ def scrape_data(folder_path):
     df=pd.DataFrame.from_dict(all_products)
     df['store']='DDStore'
     df['date']= date.today()
-    df.to_excel(f"{folder_path}\\ddstore_{date.today()}.xlsx", index=False)
+    df.to_csv(f"{folder_path}\\ddstore_{date.today()}.csv", index=False)

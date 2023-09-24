@@ -1,4 +1,5 @@
 import string
+from datetime import date
 
 import pandas as pd
 
@@ -12,6 +13,8 @@ from sklearn.cluster import AgglomerativeClustering
 def add_new_data(file):
     scraped_data = pd.read_csv(file)
     date = scraped_data['date'][0]
+    new_products = 0
+    existing_products = 0
     for row in scraped_data.values:
         link = row[1].lower()
         link = f"https://www.ekupi.mk{link}" if row[5] == "EKupi" else link
@@ -20,10 +23,17 @@ def add_new_data(file):
         if existing_product:
             data_repository.update_image(existing_product.link, row[2])
             if str(existing_product.current_price.date) != date:
+                data_repository.evaluate_previous_prediction(existing_product.id, row[3],
+                                                             existing_product.current_price.date)
                 data_repository.add_new_price_to_product(existing_product.link, row[3], date)
+                existing_products += 1
         else:
             data_repository.add_new_product(row[0], link, row[2], row[3], row[4], row[5], row[6], preprocessed_name)
+            new_products += 1
     cluster_products()
+    data_repository.add_new_scraping_date(date)
+    return existing_products, new_products
+    # train_model_and_make_predictions(date)
 
 
 def _preprocess_name(text):
@@ -84,3 +94,33 @@ def _cluster_dataframe(df, category):
     df['cluster'] = cluster_labels
     df['cluster'] = df.apply(lambda row: f"{category}{row['cluster']}", axis=1)
     return df
+
+
+def train_model_and_make_predictions(date):
+    df = _create_training_df()
+    # CHECK IF YOU NEED TO RENAME THE DATE COLUMNS
+    # CHECK THE ENCODING PROCESS
+    model = _train_model(df)
+    # TRANSFORM DATASET BY DROPPING THE OLDEST DATE
+    # PREDICT THE NEW VALUES
+    # SAVE PREDICITON OBJECTS FOR EACH PRODUCT IN THE DF
+    return df
+
+
+def _create_training_df():
+    dates = data_repository.get_latest_scraping_dates(6)
+    rows = data_repository.get_dataset(dates)
+    df = pd.DataFrame(rows)
+    pivot_df = df.pivot(index=['id', 'category', 'store'], columns='date', values='price').reset_index()
+    pivot_df.dropna(inplace=True)
+    today = date.today()
+    training_dataset_path = f"helpers\\training_datasets\\training_dataset\\{today}"
+    pivot_df.to_excel(training_dataset_path, index=False)
+    return pivot_df
+
+
+def _train_model(df):
+    # Separate input and target feature
+    # Split into training , validation and testing
+    # Try several models and get the best one based on RMSE?
+    pass

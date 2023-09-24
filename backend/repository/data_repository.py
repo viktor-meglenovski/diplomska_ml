@@ -1,7 +1,10 @@
-from sqlalchemy import Integer, String, Date
-from sqlalchemy.orm import joinedload
+from datetime import date
 
-from models.models import Product, PastPrice, CurrentPrice, ProductCluster
+from sqlalchemy import Integer, String, Date, desc, func, bindparam
+from sqlalchemy.orm import joinedload, aliased
+from sqlalchemy import text
+
+from models.models import Product, PastPrice, CurrentPrice, ProductCluster, ScrapingDate, Prediction
 from repository.database import Session
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -103,6 +106,99 @@ def update_image(link: String, image: String):
         product.image = image
         session.commit()
         return product
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def get_latest_scraping_dates(num):
+    session = None
+    try:
+        session = Session()
+        dates = session.query(ScrapingDate).order_by(desc(ScrapingDate.date)).limit(num).all()
+        dates = [str(date.date) for date in dates]
+        dates.reverse()
+        return dates
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def get_dataset(dates):
+    session = None
+    try:
+        session = Session()
+        dates_param = str(dates).replace('[', '(').replace(']', ')')
+        sql_query1 = text(f"""
+            SELECT p.id, p.category, p.store, pp.price, pp.date
+            FROM product p
+            JOIN past_price pp ON p.id = pp.product_id AND pp.date IN {dates_param}
+        """)
+        sql_query2 = text(f"""
+            SELECT p.id, p.category, p.store, cp.price, cp.date
+            FROM product p
+            JOIN current_price cp ON p.current_price_id = cp.id AND cp.date IN {dates_param}
+        """)
+
+        result1 = session.execute(sql_query1)
+        result2 = session.execute(sql_query2)
+        rows1 = result1.fetchall()
+        rows2 = result2.fetchall()
+        rows = list()
+        for r in rows1:
+            rows.append(r)
+        for r in rows2:
+            rows.append(r)
+        return rows
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def evaluate_previous_prediction(product_id, price, prediction_date):
+    session = None
+    try:
+        session = Session()
+        prediction = (session.query(Prediction)
+                      .filter(Prediction.product_id == product_id)
+                      .filter(Prediction.predicted_on == prediction_date)
+                      .first())
+        if not prediction:
+            return
+        threshold = prediction.previous_price*0.05
+        prediction.next_actual_price = price
+        prediction.prediction_accuracy = abs(price-prediction.prediction_result) < threshold
+        session.commit()
+        return prediction
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def add_new_scraping_date(date_to_add):
+    session = None
+    try:
+        session = Session()
+        scraping_date = ScrapingDate(date=date_to_add)
+        session.add(scraping_date)
+        session.commit()
+        return scraping_date
     except SQLAlchemyError as e:
         if session:
             session.rollback()

@@ -1749,3 +1749,240 @@ console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1
 console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
 1694253577721	Marionette	INFO	Stopped listening on port 49252
 Dynamically enable window occlusion 1
+1695497532693	geckodriver	INFO	Listening on 127.0.0.1:63864
+1695497535739	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63865" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Viktor\\AppData\\Local\\Temp\\rust_mozprofileCKm5wj"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1695497536036	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1695497536099	Marionette	INFO	Listening on port 63873
+WebDriver BiDi listening on ws://127.0.0.1:63865
+Read port: 63873
+1695497536257	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:63865/devtools/browser/3cfe53dd-ae95-4464-a357-4583a442afdc
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 88: Script terminated by timeout at:
+i@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:88:774
+b.toCompressedString@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:88:647
+getLoadedModuleHash@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:188:160
+a@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:205:1035
+getEndPointUrl@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:22:421
+_tryToSendViaBeacon@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:89:4203
+_initialize/<@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:89:1236
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:61:10432
+c.__emitToSubscription@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:70:1477
+c.emit@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:70:1303
+@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:326:1027
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:61:10432
+d@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:321:2086
+
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=AW-872193954, line 104: Script terminated by timeout at:
+l@https://www.googletagmanager.com/gtag/js?id=AW-872193954:104:17
+Fz@https://www.googletagmanager.com/gtag/js?id=AW-872193954:452:134
+Gz/<@https://www.googletagmanager.com/gtag/js?id=AW-872193954:452:111
+
+1695497558853	Marionette	INFO	Stopped listening on port 63873
+Dynamically enable window occlusion 1
+1695507767691	geckodriver	INFO	Listening on 127.0.0.1:50478
+1695507770744	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50479" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Viktor\\AppData\\Local\\Temp\\rust_mozprofileHHc5vq"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1695507771016	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1695507771074	Marionette	INFO	Listening on port 50487
+WebDriver BiDi listening on ws://127.0.0.1:50479
+Read port: 50487
+1695507771194	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:50479/devtools/browser/99050173-6f4a-4229-aed7-b112d4f83351
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+[ERROR neqo_http3::connection] [Http3 connection] The new(81920) and the old value(131072) of setting MaxHeaderListSize do not match
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+1695507888066	Marionette	INFO	Stopped listening on port 50487
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz, line 56: Script terminated by timeout at:
+resize@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:56:617
+
+Dynamically enable window occlusion 1
+1695508089154	geckodriver	INFO	Listening on 127.0.0.1:50665
+1695508092206	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50666" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Viktor\\AppData\\Local\\Temp\\rust_mozprofilexQ6cqs"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1695508092417	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1695508092467	Marionette	INFO	Listening on port 50673
+WebDriver BiDi listening on ws://127.0.0.1:50666
+Read port: 50673
+1695508092611	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:50666/devtools/browser/d8134964-2041-417b-9d87-dbfb2e6a82cd
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+1695508206398	Marionette	INFO	Stopped listening on port 50673
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz, line 56: Script terminated by timeout at:
+resize@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:56:617
+
+Dynamically enable window occlusion 1
+1695508681819	geckodriver	INFO	Listening on 127.0.0.1:50900
+1695508684886	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50901" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Viktor\\AppData\\Local\\Temp\\rust_mozprofileMQzVAE"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1695508685091	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1695508685140	Marionette	INFO	Listening on port 50910
+WebDriver BiDi listening on ws://127.0.0.1:50901
+Read port: 50910
+1695508685279	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:50901/devtools/browser/711a4f6e-0662-492e-be56-6f589b0f5c2e
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+[ERROR neqo_http3::connection] [Http3 connection] The new(81920) and the old value(131072) of setting MaxHeaderListSize do not match
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 271: Script terminated by timeout at:
+a/<@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:271:166
+
+1695508803932	Marionette	INFO	Stopped listening on port 50910
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz, line 56: Script terminated by timeout at:
+resize@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:56:617
+
+Dynamically enable window occlusion 1
+1695508909718	geckodriver	INFO	Listening on 127.0.0.1:51076
+1695508912781	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51077" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Viktor\\AppData\\Local\\Temp\\rust_mozprofileZ7QEZh"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1695508912984	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1695508913033	Marionette	INFO	Listening on port 51084
+WebDriver BiDi listening on ws://127.0.0.1:51077
+Read port: 51084
+1695508913170	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:51077/devtools/browser/5bb1660e-3e82-4624-850f-9b1522c86a76
+1695508989283	Marionette	INFO	Stopped listening on port 51084
+JavaScript warning: https://www.neptun.mk/node_modules/jquery/dist/jquery.min.js?sv=8.0, line 3: Script terminated by timeout at:
+ab@https://www.neptun.mk/node_modules/jquery/dist/jquery.min.js?sv=8.0:3:24579
+
+Dynamically enable window occlusion 1
+1695509080297	geckodriver	INFO	Listening on 127.0.0.1:51173
+1695509083377	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51174" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Viktor\\AppData\\Local\\Temp\\rust_mozprofileY5Yf1E"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1695509083583	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1695509083632	Marionette	INFO	Listening on port 51181
+WebDriver BiDi listening on ws://127.0.0.1:51174
+Read port: 51181
+1695509083770	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:51174/devtools/browser/0f97574a-d8b8-4b94-a15f-c10d315e5dbe
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 88: Script terminated by timeout at:
+b.toCompressedString@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:88:541
+getLoadedModuleHash@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:188:160
+a@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:205:1035
+getEndPointUrl@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:22:421
+_tryToSendViaBeacon@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:89:4203
+_initialize/<@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:89:1236
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:61:10432
+c.__emitToSubscription@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:70:1477
+c.emit@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:70:1303
+@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:326:1027
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:61:10432
+d@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:321:2086
+
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz, line 88: Script terminated by timeout at:
+i@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:88:774
+b.toCompressedString@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:88:647
+getLoadedModuleHash@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:188:160
+a@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:205:1035
+getEndPointUrl@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:22:421
+_tryToSendViaBeacon@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:89:4203
+_initialize/<@https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/gbZcNcIOK-B.js?_nc_x=Ij3Wp8lg5Kz:89:1236
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:61:10432
+c.__emitToSubscription@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:70:1477
+c.emit@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:70:1303
+@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:326:1027
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:61:10432
+d@https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/aMehCcu65A0.js?_nc_x=Ij3Wp8lg5Kz:321:2086
+
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz, line 460: Script terminated by timeout at:
+_tryToSendViaBeacon@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:460:4129
+_initialize/<@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:460:1236
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:55:10432
+c.__emitToSubscription@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:81:1477
+c.emit@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:81:1303
+@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:459:1027
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:55:10432
+d@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:505:2086
+
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+console.error: (new TypeError("lazy.AsyncShutdown.profileBeforeChange is undefined", "resource://services-settings/Database.sys.mjs", 593))
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz, line 152: Script terminated by timeout at:
+b.toCompressedString@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:152:541
+getLoadedModuleHash@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:242:160
+a@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:248:1035
+getEndPointUrl@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:452:421
+_tryToSendViaBeacon@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:460:4203
+_initialize/<@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:460:1236
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:55:10432
+c.__emitToSubscription@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:81:1477
+c.emit@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:81:1303
+@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:459:1027
+applyWithGuard@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:55:10432
+d@https://static.xx.fbcdn.net/rsrc.php/v3iEpO4/yU/l/en_US/2rY2nVUMwUd.js?_nc_x=Ij3Wp8lg5Kz:505:2086
+
+1695509270061	Marionette	INFO	Stopped listening on port 51181
+Dynamically enable window occlusion 1

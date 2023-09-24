@@ -76,6 +76,13 @@ class Prediction(Base):
     predicted_on = Column(Date)
     previous_price = Column(BigInteger)
     next_predicted_price = Column(BigInteger)
+    next_actual_price = Column(BigInteger)
     product_id = Column(BigInteger, ForeignKey('product.id'))
 
     product = relationship("Product", back_populates="predictions")
+
+
+class ScrapingDate(Base):
+    __tablename__ = "scraping_date"
+    date = Column(Date, primary_key=True)
+

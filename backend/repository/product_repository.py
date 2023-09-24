@@ -85,3 +85,18 @@ def update_cluster_for_product(link, cluster_id):
     finally:
         if session:
             session.close()
+
+
+def get_training_data():
+    session = None
+    try:
+        session = Session()
+        products = session.query(Product).all()
+        return products
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()

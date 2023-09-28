@@ -1,5 +1,4 @@
 import string
-from datetime import date
 
 import pandas as pd
 
@@ -9,12 +8,16 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import pairwise_distances
 from sklearn.cluster import AgglomerativeClustering
 
+from service.training_service import train_model_and_make_predictions
+
 
 def add_new_data(file):
     scraped_data = pd.read_csv(file)
     date = scraped_data['date'][0]
     new_products = 0
     existing_products = 0
+    correct_predictions = 0
+    all_predictions = 0
     for row in scraped_data.values:
         link = row[1].lower()
         link = f"https://www.ekupi.mk{link}" if row[5] == "EKupi" else link
@@ -23,8 +26,11 @@ def add_new_data(file):
         if existing_product:
             data_repository.update_image(existing_product.link, row[2])
             if str(existing_product.current_price.date) != date:
-                data_repository.evaluate_previous_prediction(existing_product.id, row[3],
-                                                             existing_product.current_price.date)
+                is_correct = data_repository.evaluate_previous_prediction(existing_product.id, row[3],
+                                                             existing_product.current_price.date, date)
+                if is_correct:
+                    correct_predictions+=is_correct
+                all_predictions += 1
                 data_repository.add_new_price_to_product(existing_product.link, row[3], date)
                 existing_products += 1
         else:
@@ -32,8 +38,14 @@ def add_new_data(file):
             new_products += 1
     cluster_products()
     data_repository.add_new_scraping_date(date)
+    data_repository.update_latest_ml_model(correct_predictions, all_predictions)
+    data_repository.mark_all_predictions_as_passed()
+    # try:
+    #     train_model_and_make_predictions(5)
+    # except Exception as e:
+    #     pass
+
     return existing_products, new_products
-    # train_model_and_make_predictions(date)
 
 
 def _preprocess_name(text):
@@ -96,31 +108,4 @@ def _cluster_dataframe(df, category):
     return df
 
 
-def train_model_and_make_predictions(date):
-    df = _create_training_df()
-    # CHECK IF YOU NEED TO RENAME THE DATE COLUMNS
-    # CHECK THE ENCODING PROCESS
-    model = _train_model(df)
-    # TRANSFORM DATASET BY DROPPING THE OLDEST DATE
-    # PREDICT THE NEW VALUES
-    # SAVE PREDICITON OBJECTS FOR EACH PRODUCT IN THE DF
-    return df
 
-
-def _create_training_df():
-    dates = data_repository.get_latest_scraping_dates(6)
-    rows = data_repository.get_dataset(dates)
-    df = pd.DataFrame(rows)
-    pivot_df = df.pivot(index=['id', 'category', 'store'], columns='date', values='price').reset_index()
-    pivot_df.dropna(inplace=True)
-    today = date.today()
-    training_dataset_path = f"helpers\\training_datasets\\training_dataset\\{today}"
-    pivot_df.to_excel(training_dataset_path, index=False)
-    return pivot_df
-
-
-def _train_model(df):
-    # Separate input and target feature
-    # Split into training , validation and testing
-    # Try several models and get the best one based on RMSE?
-    pass

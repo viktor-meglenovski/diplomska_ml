@@ -1,3 +1,5 @@
+import json
+
 import plotly
 from sqlalchemy import Integer
 import plotly.graph_objs as go
@@ -30,21 +32,33 @@ def _create_prices_df(past_prices, current_price):
     return df
 
 
-def _create_price_visualization(df, width=800, height=500):
+def _create_price_visualization(df):
     fig = go.Figure()
 
     # Assuming your DataFrame columns are named 'date' and 'price'
-    fig.add_trace(go.Scatter(x=df['Date'], y=df['Price'], mode='lines+markers', name='Price'))
+    fig.add_trace(go.Scatter(x=df['Date'], y=df['Price'], mode='lines+markers', name='Price', hovertemplate=f'%{{y}} MKD<br>Date: %{{x}}<br><extra></extra>',
+))
 
     fig.update_layout(
+        title='Prices and Predictions over Time',
         xaxis_title='Dates',
-        yaxis_title='Price',
+        yaxis_title='Price (МКД)',
         template='plotly',
-        width=width,
-        height=height,
+        dragmode=False
+        # yaxis=dict(
+        #     tick0=0,
+        #     dtick=500,
+        #     tickformat='d'
+        # )
     )
-
-    # Render the plot as HTML
-    graphJSON = plotly.io.to_json(fig, pretty=True)
-    # html_content = fig.to_html(full_html=False, include_plotlyjs='cdn')
+    fig.update_xaxes(
+        tickvals=df['Date'],
+        tickformat="%d %b %Y",
+    )
+    fig.update_yaxes(
+        tickvals=df['Price'],
+        tickformat='d'
+    )
+    graphJSON = json.loads(plotly.io.to_json(fig, pretty=True))
+    graphJSON['config'] = {'displayModeBar': False, 'responsive': True}
     return graphJSON

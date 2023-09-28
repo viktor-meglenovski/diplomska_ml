@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Boolean, ForeignKey, Enum, Date, BigInteger
+from sqlalchemy import Column, String, Boolean, ForeignKey, Enum, Date, BigInteger, Double
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship, declarative_base
 
@@ -77,6 +77,9 @@ class Prediction(Base):
     previous_price = Column(BigInteger)
     next_predicted_price = Column(BigInteger)
     next_actual_price = Column(BigInteger)
+    predicted_percentage = Column(Double)
+    is_passed = Column(Boolean)
+    evaluated_on = Column(Date)
     product_id = Column(BigInteger, ForeignKey('product.id'))
 
     product = relationship("Product", back_populates="predictions")
@@ -85,4 +88,13 @@ class Prediction(Base):
 class ScrapingDate(Base):
     __tablename__ = "scraping_date"
     date = Column(Date, primary_key=True)
+
+
+class MLModel(Base):
+    __tablename__ = "mlmodel"
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    model_name = Column(String)
+    created_on = Column(Date)
+    testing_accuracy = Column(Double)
+    actual_accuracy = Column(Double)
 

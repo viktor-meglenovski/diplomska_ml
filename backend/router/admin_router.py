@@ -1,11 +1,8 @@
 import io
 
-from fastapi import APIRouter, HTTPException, UploadFile
-from sqlalchemy import Integer
-from starlette.responses import HTMLResponse, StreamingResponse
+from fastapi import APIRouter, UploadFile
 from helpers.data_scraping.scripts.scrape_all import scrape_all
-from service import data_service
-import repository.data_repository as data_repository
+from service import data_service, training_service
 
 router = APIRouter()
 
@@ -41,6 +38,10 @@ async def cluster_products():
     return {"message": "Clustering Finished!"}
 
 
-@router.get("/create_training_df")
+@router.get("/train")
 async def create_training_df():
-    data_service.train_model()
+    training_service.train_model_and_make_predictions(5)
+    response = {
+        "message": "Perfect! :)"
+    }
+    return response

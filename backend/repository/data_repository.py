@@ -4,7 +4,7 @@ from sqlalchemy import Integer, String, Date, desc, func, bindparam
 from sqlalchemy.orm import joinedload, aliased
 from sqlalchemy import text
 
-from models.models import Product, PastPrice, CurrentPrice, ProductCluster, ScrapingDate, Prediction
+from models.models import Product, PastPrice, CurrentPrice, ProductCluster, ScrapingDate, Prediction, MLModel
 from repository.database import Session
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -167,21 +167,23 @@ def get_dataset(dates):
             session.close()
 
 
-def evaluate_previous_prediction(product_id, price, prediction_date):
+def evaluate_previous_prediction(product_id, price, prediction_date, evaluated_on):
     session = None
     try:
         session = Session()
         prediction = (session.query(Prediction)
                       .filter(Prediction.product_id == product_id)
                       .filter(Prediction.predicted_on == prediction_date)
+                      .filter(Prediction.is_passed == False)
                       .first())
         if not prediction:
             return
         threshold = prediction.previous_price*0.05
         prediction.next_actual_price = price
         prediction.prediction_accuracy = abs(price-prediction.prediction_result) < threshold
+        prediction.evaluated_on = evaluated_on
         session.commit()
-        return prediction
+        return 1 if prediction.prediction_accuracy else 0
     except SQLAlchemyError as e:
         if session:
             session.rollback()
@@ -199,6 +201,90 @@ def add_new_scraping_date(date_to_add):
         session.add(scraping_date)
         session.commit()
         return scraping_date
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def add_new_ml_model(model_name, created_on, testing_accuracy):
+    session = None
+    try:
+        session = Session()
+        ml_model = MLModel(model_name=model_name, created_on=created_on, testing_accuracy=testing_accuracy)
+        session.add(ml_model)
+        session.commit()
+        return ml_model
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def update_latest_ml_model(correct_predictions, all_predictions):
+    session = None
+    try:
+        session = Session()
+        ml_model = session.query(MLModel).filter(MLModel.actual_accuracy == None).first()
+        if not ml_model:
+            return
+        ml_model.actual_accuracy = correct_predictions / all_predictions * 100
+        session.commit()
+        return ml_model
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def get_all_evaluated_ml_models():
+    session = None
+    try:
+        session = Session()
+        ml_models = session.query(MLModel).filter(MLModel.actual_accuracy == None).all()
+        return ml_models
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def add_new_prediction(predicted_on, next_predicted_price, predicted_percentage_result, prediction_result, previous_price, product_id):
+    session = None
+    try:
+        session = Session()
+        prediction = Prediction(predicted_on=predicted_on, next_predicted_price=next_predicted_price, predicted_percentage=predicted_percentage_result, prediction_result=prediction_result, previous_price=previous_price, product_id=product_id)
+        session.add(prediction)
+        session.commit()
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def mark_all_predictions_as_passed():
+    session = None
+    try:
+        session = Session()
+        predictions = session.query(Prediction).filter(Prediction.is_passed == False).all()
+        for p in predictions:
+            p.is_passed = True
+            session.commit()
     except SQLAlchemyError as e:
         if session:
             session.rollback()

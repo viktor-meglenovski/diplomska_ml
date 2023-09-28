@@ -68,4 +68,4 @@ def scrape_all():
 
     total_number = result_df.shape[0]
 
-    return csv_content, file_name, all_stats, total_number
+    return csv_content, f'all_data_{date.today()}.csv', all_stats, total_number

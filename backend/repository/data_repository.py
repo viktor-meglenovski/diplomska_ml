@@ -132,6 +132,23 @@ def get_latest_scraping_dates(num):
             session.close()
 
 
+def get_all_scraping_dates():
+    session = None
+    try:
+        session = Session()
+        dates = session.query(ScrapingDate).order_by(desc(ScrapingDate.date)).all()
+        dates = [str(date.date) for date in dates]
+        dates.reverse()
+        return dates
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
 def get_dataset(dates):
     session = None
     try:
@@ -180,7 +197,7 @@ def evaluate_previous_prediction(product_id, price, prediction_date, evaluated_o
             return
         threshold = prediction.previous_price*0.05
         prediction.next_actual_price = price
-        prediction.prediction_accuracy = abs(price-prediction.prediction_result) < threshold
+        prediction.prediction_accuracy = abs(price-prediction.next_predicted_price) < threshold
         prediction.evaluated_on = evaluated_on
         session.commit()
         return 1 if prediction.prediction_accuracy else 0
@@ -265,7 +282,7 @@ def add_new_prediction(predicted_on, next_predicted_price, predicted_percentage_
     session = None
     try:
         session = Session()
-        prediction = Prediction(predicted_on=predicted_on, next_predicted_price=next_predicted_price, predicted_percentage=predicted_percentage_result, prediction_result=prediction_result, previous_price=previous_price, product_id=product_id)
+        prediction = Prediction(predicted_on=predicted_on, next_predicted_price=next_predicted_price, predicted_percentage=predicted_percentage_result, prediction_result=prediction_result, previous_price=previous_price, product_id=product_id, is_passed=False)
         session.add(prediction)
         session.commit()
     except SQLAlchemyError as e:
@@ -285,6 +302,56 @@ def mark_all_predictions_as_passed():
         for p in predictions:
             p.is_passed = True
             session.commit()
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def get_all_ml_models():
+    session = None
+    try:
+        session = Session()
+        models = session.query(MLModel).order_by(MLModel.created_on).all()
+        return models
+    except SQLAlchemyError as e:
+        if session:
+            session.rollback()
+        raise e
+    finally:
+        if session:
+            session.close()
+
+
+def get_research_dataset(dates):
+    session = None
+    try:
+        session = Session()
+        dates_param = str(dates).replace('[', '(').replace(']', ')')
+        sql_query1 = text(f"""
+            SELECT p.id, p.name, p.link, p.category, p.store,  p.product_cluster_id, pp.price, pp.date
+            FROM product p
+            JOIN past_price pp ON p.id = pp.product_id AND pp.date IN {dates_param}
+        """)
+        sql_query2 = text(f"""
+            SELECT p.id,  p.name, p.link,  p.category, p.store,  p.product_cluster_id, cp.price, cp.date
+            FROM product p
+            JOIN current_price cp ON p.current_price_id = cp.id AND cp.date IN {dates_param}
+        """)
+
+        result1 = session.execute(sql_query1)
+        result2 = session.execute(sql_query2)
+        rows1 = result1.fetchall()
+        rows2 = result2.fetchall()
+        rows = list()
+        for r in rows1:
+            rows.append(r)
+        for r in rows2:
+            rows.append(r)
+        return rows
     except SQLAlchemyError as e:
         if session:
             session.rollback()

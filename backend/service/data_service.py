@@ -40,10 +40,7 @@ def add_new_data(file):
     data_repository.add_new_scraping_date(date)
     data_repository.update_latest_ml_model(correct_predictions, all_predictions)
     data_repository.mark_all_predictions_as_passed()
-    # try:
-    #     train_model_and_make_predictions(5)
-    # except Exception as e:
-    #     pass
+    train_model_and_make_predictions(5)
 
     return existing_products, new_products
 
@@ -101,7 +98,7 @@ def _cluster_dataframe(df, category):
     tfidf_matrix = tfidf_vectorizer.fit_transform(product_names)
     dense_tfidf_matrix = tfidf_matrix.toarray()
     jaccard_distance = pairwise_distances(dense_tfidf_matrix, metric='jaccard')
-    agg_clustering = AgglomerativeClustering(n_clusters=None, distance_threshold=0.01)
+    agg_clustering = AgglomerativeClustering(n_clusters=None, distance_threshold=0.05)
     cluster_labels = agg_clustering.fit_predict(jaccard_distance)
     df['cluster'] = cluster_labels
     df['cluster'] = df.apply(lambda row: f"{category}{row['cluster']}", axis=1)

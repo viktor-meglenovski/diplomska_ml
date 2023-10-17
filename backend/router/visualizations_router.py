@@ -12,3 +12,4 @@ def send_visualization(product_id: int):
     except HTTPException as e:
         raise e
     return visualization_json
+

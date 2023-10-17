@@ -66,6 +66,20 @@ def create_training_df(number_of_prices):
     return pivot_df, csv_content, f"training_dataset_{today}.csv", dates, pivot_df.shape[0]
 
 
+def create_research_training_df():
+    dates = data_repository.get_all_scraping_dates()
+    rows = data_repository.get_research_dataset(dates)
+    df = pd.DataFrame(rows)
+    df['date']=df['date'].astype(str)
+    pivot_df = df.pivot(index=['id','name', 'link', 'category', 'store', 'product_cluster_id'], columns='date', values='price').reset_index()
+    today = date.today()
+    training_dataset_path = f"helpers\\training_datasets\\research_dataset_{today}.csv"
+    pivot_df.to_csv(training_dataset_path, index=False)
+    csv_content = pivot_df.to_csv(index=False)
+
+    return pivot_df, csv_content, f"research_dataset_{today}.csv", dates, pivot_df.shape[0]
+
+
 def create_predictions_df(number_of_prices):
     dates = data_repository.get_latest_scraping_dates(number_of_prices)
     rows = data_repository.get_dataset(dates)

@@ -1,8 +1,8 @@
 import io
 
-from fastapi import APIRouter, UploadFile
+from fastapi import APIRouter, UploadFile, HTTPException
 from helpers.data_scraping.scripts.scrape_all import scrape_all
-from service import data_service, training_service
+from service import data_service, training_service, visualizations_service
 
 router = APIRouter()
 
@@ -45,3 +45,17 @@ async def create_training_df():
         "message": "Perfect! :)"
     }
     return response
+
+
+@router.get("/modelStatistics")
+def model_statistics_visualization():
+    try:
+        visualization_json = visualizations_service.create_model_statistics_visualization()
+    except HTTPException as e:
+        raise e
+    return visualization_json
+
+
+@router.get("/neptunDataset")
+def neptun_dataset():
+    training_service.create_research_training_df()

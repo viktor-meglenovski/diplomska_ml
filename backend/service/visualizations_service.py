@@ -52,7 +52,7 @@ def _create_price_visualization(df):
                              ))
 
     fig.update_layout(
-        title='Prices and Predictions over Time',
+        title='Product Prices over Time',
         xaxis_title='Dates',
         yaxis_title='Price (МКД)',
         template='plotly',

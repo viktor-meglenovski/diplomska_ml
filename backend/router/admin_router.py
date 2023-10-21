@@ -1,10 +1,11 @@
 import io
 
-from fastapi import APIRouter, UploadFile, HTTPException
+from fastapi import APIRouter, UploadFile, HTTPException, Depends
 from helpers.data_scraping.scripts.scrape_all import scrape_all
+from models.admin_auth_bearer import AdminJWTBearer
 from service import data_service, training_service, visualizations_service
 
-router = APIRouter()
+router = APIRouter(prefix="/admin", tags=["Admin"], dependencies=[Depends(AdminJWTBearer())])
 
 
 @router.get("")

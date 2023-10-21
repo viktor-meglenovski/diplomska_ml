@@ -12,8 +12,8 @@ async def healthcheck() -> dict[str, str]:
     return {"status": "ok"}
 
 
-app.include_router(visualizations_router, prefix="/visualize", tags=["Visualizations"])
-app.include_router(admin_router, prefix="/admin", tags=["Admin"])
+app.include_router(visualizations_router)
+app.include_router(admin_router)
 
 app.add_middleware(
     CORSMiddleware,
